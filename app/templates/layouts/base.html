@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+
+    {% block css %}{% endblock %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+
+    <script src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+
+    {% block js %}{% endblock %}
+
+  </head>
+
+  <body>
+
+    {% block container %}
+    <div class="container">
+      <!-- header -->
+      <header></header>
+      <!-- nav -->
+      <nav></nav>
+      <!-- main view -->
+      <main>
+        {% block main %}{% endblock %}
+      </main>
+      <!-- footer -->
+      <footer></footer>
+    </div>
+    {% endblock %}
+
+    {% block script %}{% endblock %}
+
+  </body>
+
+</html>

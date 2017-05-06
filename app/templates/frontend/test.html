@@ -1,0 +1,25 @@
+{% set page_title = 'spot_prices' %}
+
+{% extends "layouts/base.html" %}
+
+{% block main %}
+  <div class="chart-container">
+
+    <div class="chart-controls">
+      <select id="node-select" size="6"  multiple>
+        {% for node in nodes %}
+          {% if True %}
+            <option value={{ node }} selected>{{ node }}</option>
+          {% else %}
+            <option value={{ node }}>{{ node }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <input id="daterange" type="text" name="daterange" value="2017-03-13 - 2017-03-23" />
+    </div>
+
+    <div class="chart">
+      <canvas id="spot-price-chart"></canvas>
+    </div>
+  </div>
+{% endblock %}
